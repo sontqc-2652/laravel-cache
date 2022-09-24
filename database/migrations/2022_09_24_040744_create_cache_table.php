@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableCache extends Migration
+class CreateCacheTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateTableCache extends Migration
     {
         Schema::create('cache', function (Blueprint $table) {
             $table->string('key')->unique();
-            $table->text('value');
+            $table->mediumText('value');
             $table->integer('expiration');
         });
     }
